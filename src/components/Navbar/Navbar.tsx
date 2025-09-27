@@ -17,7 +17,7 @@ export const Navbar = () => {
 
             <div className="hidden md:block py-2">
                 <Container>
-                    <nav className='flex justify-between items-center'>
+                    <nav className='flex h-12 justify-between items-center'>
                         <div className='w-2/6'>
                             <Image src="/general/logo.png" width={400} height={400} alt="logo page" className="w-32 h-14" />
                         </div>

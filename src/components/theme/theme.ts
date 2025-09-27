@@ -1,31 +1,31 @@
 export type Colors = 'red' | 'yellow' | 'black' | 'gray' | 'white'
-export type Position = 'start' | 'center' | 'end'
+export type Position = 'start' | 'center' | 'end' | 'between'
 export type FontWeight = 'bold' | 'medium' | 'light'
-export type FontSize = 'xxl' | 'xl' | 'lg' | 'sm'
+export type FontSize = 'xx' | 'xxl' | 'xl' | 'lg' | 'sm'
 export type Separation = '2' | '4' | '6' | '8' | '10'
 
 export const backgroundColors: Record<Colors, string> = {
-    black: 'bg-[#212121]',
-    gray: 'bg-[#5C5C5B]',
-    white: "bg-[#FFFFFF]",
-    red: "bg-[#F3274C]",
-    yellow: "bg-[#FFD40D]"
+    black: 'bg-black',
+    gray: 'bg-gray',
+    white: "bg-white",
+    red: "bg-red",
+    yellow: "bg-yellow"
 }
 
 export const borderColors: Record<Colors, string> = {
-    black: 'border-[#212121]',
-    gray: 'border-[#5C5C5B]',
-    white: "border-[#FFFFFF]",
-    red: "border-[#F3274C]",
-    yellow: "border-[#FFD40D]"
+    black: 'border-black',
+    gray: 'border-gray',
+    white: "border-white",
+    red: "border-red",
+    yellow: "border-yellow"
 }
 
 export const textColors: Record<Colors, string> = {
-    black: 'text-[#212121]',
-    gray: 'text-[#5C5C5B]',
-    white: "text-[#FFFFFF]",
-    red: "text-[#F3274C]",
-    yellow: "text-[#FFD40D]"
+    black: 'text-black',
+    gray: 'text-gray',
+    white: "text-white",
+    red: "text-red",
+    yellow: "text-yellow"
 }
 
 export const textFont: Record<FontWeight, string> = {
@@ -35,6 +35,7 @@ export const textFont: Record<FontWeight, string> = {
 }
 
 export const textSize: Record<FontSize, string> = {
+    xx: 'text-6xl',
     xxl: 'text-4xl',
     xl: 'text-2xl',
     lg: 'text-lg',
@@ -44,12 +45,14 @@ export const textSize: Record<FontSize, string> = {
 export const alingItem: Record<Position, string> = {
     center: "items-center",
     end: "items-end",
-    start: "items-start"
+    start: "items-start",
+    between: 'items-between'
 }
 export const justifyItem: Record<Position, string> = {
     center: "justify-center",
     end: "justify-end",
-    start: "justify-start"
+    start: "justify-start",
+    between: 'justify-between'
 }
 
 export const gapItems: Record<Separation, string> = {

@@ -10,7 +10,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 export const Button = ({ children, color, className, ...props }: ButtonProps) => {
 
     const ButtonStyles = [
-        'py-2 px-4 rounded-lg flex items-center gap-2 shadow-sm cursor-pointer hover:scale-105 duration-300',
+        'py-2 px-4 rounded-lg flex items-center justify-center gap-2 shadow-sm cursor-pointer hover:scale-105 duration-300',
         backgroundColors[color],
         className
     ].filter(Boolean).join(' ')
