@@ -2,7 +2,8 @@ export type Colors = 'red' | 'yellow' | 'black' | 'gray' | 'white'
 export type Position = 'start' | 'center' | 'end' | 'between'
 export type FontWeight = 'bold' | 'medium' | 'light'
 export type FontSize = 'xx' | 'xxl' | 'xl' | 'lg' | 'sm'
-export type Separation = '2' | '4' | '6' | '8' | '10'
+export type Separation = '0' | '2' | '4' | '6' | '8' | '10'
+export type Rounded = 'lg' | '2xl' | 'full'
 
 export const backgroundColors: Record<Colors, string> = {
     black: 'bg-black',
@@ -48,6 +49,7 @@ export const alingItem: Record<Position, string> = {
     start: "items-start",
     between: 'items-between'
 }
+
 export const justifyItem: Record<Position, string> = {
     center: "justify-center",
     end: "justify-end",
@@ -56,9 +58,16 @@ export const justifyItem: Record<Position, string> = {
 }
 
 export const gapItems: Record<Separation, string> = {
+    '0': 'gap-0',
     "2": 'gap-2',
     "4": 'gap-4',
     "6": 'gap-6',
     "8": 'gap-8',
     "10": 'gap-10',
+}
+
+export const roundedItem: Record<Rounded, string> = {
+    "2xl": 'rounded-2xl',
+    'lg': 'rounded-lg',
+    'full': 'rounded-full'
 }

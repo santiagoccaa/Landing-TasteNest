@@ -4,7 +4,7 @@ import { ReactNode } from 'react'
 interface FlexProps {
     aling?: Position
     justify?: Position
-    direction?: 'row' | 'colum'
+    direction?: 'row' | 'col'
     gap?: Separation
     className?: string
     children: ReactNode
@@ -25,7 +25,7 @@ export const Flex = ({
         justifyItem[justify],
         gapItems[gap],
         className,
-        direction === 'colum' ? 'flex-col' : 'flex-row'
+        direction === 'col' ? 'flex-col' : 'flex-row'
     ].filter(Boolean).join(' ')
 
     return (

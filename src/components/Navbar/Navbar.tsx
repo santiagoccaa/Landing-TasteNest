@@ -46,7 +46,7 @@ export const Navbar = () => {
 
             <div className="block md:hidden py-2 h-16 relative">
                 <ul className={` ${navActive ? 'h-screen' : 'h-0'} absolute top-16 bg-white w-full overflow-hidden transition-all duration-500 flex items-end`}>
-                    <Flex direction='colum' gap='8' className='absolute top-12 h-96 w-full'>
+                    <Flex direction='col' gap='8' className='absolute top-12 h-96 w-full'>
                         <li>
                             <Text color='black' fw='bold' fs='lg' className='mt-12'>Inicio</Text>
                         </li>
