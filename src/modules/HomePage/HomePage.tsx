@@ -1,5 +1,5 @@
 import { Container } from "@/components/UI"
-import { About, Categories, DiscoverMenu, DishSpecial, Hero } from "./components"
+import { About, Categories, DiscoverMenu, DishSpecial, Hero, ReserveTable } from "./components"
 import { AboutCard } from "./components/AboutCard"
 
 export const HomePage = () => {
@@ -12,6 +12,7 @@ export const HomePage = () => {
                 <Categories />
                 <DishSpecial />
                 <DiscoverMenu />
+                <ReserveTable />
             </Container>
         </>
     )
