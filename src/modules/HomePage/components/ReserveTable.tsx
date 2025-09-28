@@ -1,5 +1,4 @@
 import { Button, Flex, Heading, Text } from '@/components/UI'
-import React from 'react'
 
 export const ReserveTable = () => {
     return (
