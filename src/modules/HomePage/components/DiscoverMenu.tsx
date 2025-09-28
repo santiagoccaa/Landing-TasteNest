@@ -14,7 +14,7 @@ const menuList: ItemMenu[] = [
     {
         id: 1,
         title: 'Steaks & BBQ',
-        description: 'canonical classics to obscure <br /> tiki drinks',
+        description: 'canonical classics to obscure tiki drinks',
         price: '120',
         portion: 'person',
         image: 'chusos'
@@ -22,7 +22,7 @@ const menuList: ItemMenu[] = [
     {
         id: 2,
         title: 'Cocktails',
-        description: 'canonical classics to obscure <br /> tiki drinks',
+        description: 'canonical classics to obscure tiki drinks',
         price: '120',
         portion: 'person',
         image: 'cocktails'
@@ -44,7 +44,7 @@ export const DiscoverMenu = () => {
                             <Image src={`/general/${menu.image}.png`} fill alt={menu.title} />
                             <div className="w-full h-full absolute top-0 left-0 p-8">
                                 <Heading fs="xxl" color="white">{menu.title}</Heading>
-                                <Text color="white">
+                                <Text color="white" className="w-50">
                                     {menu.description}
                                 </Text>
                             </div>
