@@ -1,5 +1,5 @@
 import { Container } from "@/components/UI"
-import { About, Categories, DiscoverMenu, DishSpecial, FeatureDishes, Hero, Ordering, ReserveTable, Testimonials } from "./components"
+import { About, Categories, DiscoverMenu, DishSpecial, FeatureDishes, Hero, Ordering, ReserveTable, Social, Testimonials } from "./components"
 import { AboutCard } from "./components/AboutCard"
 
 export const HomePage = () => {
@@ -14,11 +14,18 @@ export const HomePage = () => {
                 <DiscoverMenu />
                 <ReserveTable />
             </Container>
-            <FeatureDishes />
+            <div className='bg-[#F5F8FD] my-16 py-16'>
+                <Container>
+                    <FeatureDishes />
+                </Container>
+            </div>
             <Container>
                 <Testimonials />
             </Container>
             <Ordering />
+            <Container>
+                <Social />
+            </Container>
         </>
     )
 }

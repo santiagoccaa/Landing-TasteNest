@@ -1,4 +1,4 @@
-import { Container, Flex, Heading, Text } from '@/components/UI'
+import { Flex, Heading, Text } from '@/components/UI'
 import Image from 'next/image'
 import { IoBag } from "react-icons/io5";
 
@@ -36,57 +36,55 @@ const dishes: DishesProps[] = [
 
 export const FeatureDishes = () => {
     return (
-        <div className='bg-[#F5F8FD] my-16 py-16'>
-            <Container>
-                <Flex direction='col'>
-                    <Heading fs='xxl' color='black'>
-                        Featured Dishes
-                    </Heading>
-                    <div className="w-40 h-1 rounded-full bg-yellow mb-12" />
 
-                    <Flex gap='10' direction='col' className='md:flex-row'>
-                        {
-                            dishes.map((dis) => (
-                                <div key={dis.id} className='w-56 h-fit pt-14 rounded-xl p-4 border-2 border-yellow relative'>
-                                    <div className='absolute top-2 left-2 rounded-full bg-yellow flex items-center justify-center w-10 h-10 text-xs font-bold'>
-                                        SALE
-                                    </div>
-                                    <button className='w-8 h-8 flex justify-center items-center bg-yellow rounded-lg cursor-pointer absolute bottom-2 right-2'>
-                                        <IoBag />
-                                    </button>
-                                    <Flex direction='col' className='w-full h-full'>
-                                        <Flex className='w-52 h-20 rounded-full bg-red mb-8'>
-                                            <Image src={`/features/${dis.image}.png`} width={800} height={800} alt={dis.title} className='w-40 h-40' />
-                                        </Flex>
+        <Flex direction='col' className='w-full'>
+            <Heading fs='xxl' color='black'>
+                Featured Dishes
+            </Heading>
+            <div className="w-40 h-1 rounded-full bg-yellow mb-12" />
 
-                                        <div className='w-full'>
-                                            <Heading fs='lg'>
-                                                {dis.title}
-                                            </Heading>
-                                            <Flex justify='start'>
-                                                <Text fs='sm' fw='bold' className='line-through'>
-                                                    ${dis.discount}
-                                                </Text>
-                                                <Text fs='lg' color='red' fw='bold'>
-                                                    ${dis.price}
-                                                </Text>
-                                            </Flex>
-                                        </div>
+            <Flex gap='10' direction='col' className='md:flex-row w-full'>
+                {
+                    dishes.map((dis) => (
+                        <div key={dis.id} className='w-56 h-fit pt-14 rounded-xl p-4 border-2 border-yellow relative'>
+                            <div className='absolute top-2 left-2 rounded-full bg-yellow flex items-center justify-center w-10 h-10 text-xs font-bold'>
+                                SALE
+                            </div>
+                            <button className='w-8 h-8 flex justify-center items-center bg-yellow rounded-lg cursor-pointer absolute bottom-2 right-2'>
+                                <IoBag />
+                            </button>
+                            <Flex direction='col' className='w-full h-full'>
+                                <Flex className='w-52 h-20 rounded-full bg-red mb-8'>
+                                    <Image src={`/features/${dis.image}.png`} width={800} height={800} alt={dis.title} className='w-40 h-40' />
+                                </Flex>
+
+                                <div className='w-full'>
+                                    <Heading fs='lg'>
+                                        {dis.title}
+                                    </Heading>
+                                    <Flex justify='start'>
+                                        <Text fs='sm' fw='bold' className='line-through'>
+                                            ${dis.discount}
+                                        </Text>
+                                        <Text fs='lg' color='red' fw='bold'>
+                                            ${dis.price}
+                                        </Text>
                                     </Flex>
                                 </div>
-                            ))
-                        }
-                    </Flex>
+                            </Flex>
+                        </div>
+                    ))
+                }
+            </Flex>
 
-                    <Flex className='mt-12'>
-                        <div className="h-3 w-3 rounded-full border-4 border-red"></div>
-                        <div className="h-2 w-2 rounded-full bg-gray"></div>
-                        <div className="h-2 w-2 rounded-full bg-gray"></div>
-                        <div className="h-2 w-2 rounded-full bg-gray"></div>
-                    </Flex>
-                </Flex>
-            </Container>
-        </div>
+            <Flex className='mt-12'>
+                <div className="h-3 w-3 rounded-full border-4 border-red"></div>
+                <div className="h-2 w-2 rounded-full bg-gray"></div>
+                <div className="h-2 w-2 rounded-full bg-gray"></div>
+                <div className="h-2 w-2 rounded-full bg-gray"></div>
+            </Flex>
+        </Flex>
+
     )
 }
 
