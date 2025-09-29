@@ -1,5 +1,5 @@
 import { Container } from "@/components/UI"
-import { About, Categories, DiscoverMenu, DishSpecial, FeatureDishes, Hero, Ordering, ReserveTable, Social, Testimonials } from "./components"
+import { About, Categories, DiscoverMenu, DishSpecial, FeatureDishes, Footer, Hero, Ordering, ReserveTable, Social, Testimonials } from "./components"
 import { AboutCard } from "./components/AboutCard"
 
 export const HomePage = () => {
@@ -26,6 +26,11 @@ export const HomePage = () => {
             <Container>
                 <Social />
             </Container>
+            <div className='bg-[#F5F8FD] mt-16 pt-16 pb-4'>
+                <Container>
+                    <Footer />
+                </Container>
+            </div>
         </>
     )
 }
