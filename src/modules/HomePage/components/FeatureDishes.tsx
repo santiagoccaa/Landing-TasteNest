@@ -46,16 +46,16 @@ export const FeatureDishes = () => {
             <Flex gap='10' direction='col' className='md:flex-row w-full'>
                 {
                     dishes.map((dis) => (
-                        <div key={dis.id} className='w-56 h-fit pt-14 rounded-xl p-4 border-2 border-yellow relative'>
+                        <div key={dis.id} className='w-80 h-fit pt-20 rounded-xl p-4 border-2 border-yellow relative'>
                             <div className='absolute top-2 left-2 rounded-full bg-yellow flex items-center justify-center w-10 h-10 text-xs font-bold'>
                                 SALE
                             </div>
                             <button className='w-8 h-8 flex justify-center items-center bg-yellow rounded-lg cursor-pointer absolute bottom-2 right-2'>
                                 <IoBag />
                             </button>
-                            <Flex direction='col' className='w-full h-full'>
+                            <Flex direction='col' className='w-full h-full' gap='10'>
                                 <Flex className='w-52 h-20 rounded-full bg-red mb-8'>
-                                    <Image src={`/features/${dis.image}.png`} width={800} height={800} alt={dis.title} className='w-40 h-40' />
+                                    <Image src={`/features/${dis.image}.png`} width={800} height={800} alt={dis.title} className='w-52 h-52' />
                                 </Flex>
 
                                 <div className='w-full'>
