@@ -30,7 +30,7 @@ const dishes: DishesProps[] = [
         title: 'Shroom Bacon Burger',
         price: '24.42',
         discount: '54.31',
-        image: 'coffe'
+        image: 'coffee'
     }
 ]
 

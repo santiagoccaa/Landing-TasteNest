@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fredoka } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
+import { GlobalProvider } from "@/context/GlobalContext";
 
 const fontPage = Fredoka({
   variable: "--font-geist-sans",
@@ -23,8 +24,10 @@ export default function RootLayout({
       <body
         className={`${fontPage.className}`}
       >
-        <Navbar />
-        {children}
+        <GlobalProvider>
+          <Navbar />
+          {children}
+        </GlobalProvider>
       </body>
     </html>
   );

@@ -40,7 +40,7 @@ export const Testimonials = () => {
                     <Image src="/testimonial/carne.png" width={800} height={800} alt='carne' className='w-full h-full' />
                 </div>
                 <div className='w-44 h-44 rounded-2xl absolute top-0 left-32 overflow-hidden'>
-                    <Image src="/testimonial/coffe.png" width={800} height={800} alt='carne' className='w-full h-full' />
+                    <Image src="/testimonial/coffee.png" width={800} height={800} alt='carne' className='w-full h-full' />
                 </div>
                 <div className='w-44 h-44 rounded-2xl absolute right-0 lg:left-56 bottom-0 overflow-hidden'>
                     <Image src="/testimonial/helado.png" width={800} height={800} alt='carne' className='w-full h-full' />
