@@ -6,7 +6,7 @@ export const Team = () => {
     return (
         <Flex direction='col' className='py-8'>
             <Heading className='uppercase text-center' fs='xxl' color='white'>
-                the talented behind <br /> every <span className='text-red'>flavourful dish</span>
+                the talented behind <br className='hidden md:block'/> every <span className='text-red'>flavourful dish</span>
             </Heading>
 
             <Flex gap='10' className='my-10 md:flex-row' direction='col'>

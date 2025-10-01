@@ -43,7 +43,7 @@ export const FeatureDishes = () => {
             </Heading>
             <div className="w-40 h-1 rounded-full bg-yellow mb-12" />
 
-            <Flex gap='10' direction='col' className='md:flex-row w-full'>
+            <Flex gap='10' direction='col' className='lg:flex-row w-full'>
                 {
                     dishes.map((dis) => (
                         <div key={dis.id} className='w-80 h-fit pt-20 rounded-xl p-4 border-2 border-yellow relative'>

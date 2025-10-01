@@ -24,7 +24,7 @@ const linksPage: LinksPage[] = [
     },
     {
         title: 'Menu',
-        href: '/menu'
+        href: '/menu/dessert'
     }
 ]
 
@@ -74,7 +74,7 @@ export const Navbar = () => {
                         {
                             linksPage.map(({ title, href }) => (
                                 <li key={title}>
-                                    <Link href={href}>
+                                    <Link href={href} onClick={() =>setNavActive(!navActive)}>
                                         <Text color='black' fw='bold' fs='lg' className='mt-12'>{title}</Text>
                                     </Link>
                                 </li>

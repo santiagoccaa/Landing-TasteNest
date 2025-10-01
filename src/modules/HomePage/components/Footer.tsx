@@ -36,7 +36,7 @@ const menuOption = [
 ]
 export const Footer = () => {
     return (
-        <Flex direction='col'>
+        <Flex direction='col' className='py-8'>
             <Flex aling='start' gap='10' direction='col' className='md:flex-row'>
                 <Flex className='rounded-2xl bg-red p-8 relative' gap='4' direction='col' aling='start'>
                     <Image src={"/general/logo.svg"} width={800} height={800} alt='logo' className='absolute top-0 left-0 w-40 h-20' />
@@ -50,12 +50,12 @@ export const Footer = () => {
                         5 star rated on TripAdvisor
                     </Heading>
                 </Flex>
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
                     <Flex direction='col' aling='start' justify='start'>
                         <Heading>
                             About
                         </Heading>
-                        <div className="w-20 h-1 rounded-full bg-yellow mb-12" />
+                        <div className="w-20 h-1 rounded-full bg-yellow mb-4 lg:mb-12" />
 
                         <ul className='flex flex-col gap-2'>
                             {
@@ -76,7 +76,7 @@ export const Footer = () => {
                         <Heading>
                             Menu
                         </Heading>
-                        <div className="w-20 h-1 rounded-full bg-yellow mb-12" />
+                        <div className="w-20 h-1 rounded-full bg-yellow mb-4 lg:mb-12" />
 
                         <ul className='flex flex-col gap-2'>
                             {
@@ -96,7 +96,7 @@ export const Footer = () => {
                         <Heading>
                             Newsletter
                         </Heading>
-                        <div className="w-20 h-1 rounded-full bg-yellow mb-12" />
+                        <div className="w-20 h-1 rounded-full bg-yellow mb-4 lg:mb-12" />
 
                         <Text color='black' fw='medium'>
                             Get recent news and updates.
@@ -115,7 +115,7 @@ export const Footer = () => {
                 </div>
             </Flex>
 
-            <div className="w-full h-1 rounded-full bg-yellow mb-12" />
+            <div className="w-full h-1 rounded-full bg-yellow my-4" />
 
             <Flex justify='start' className='w-full'>
                 <Text color='red' fw='bold'>

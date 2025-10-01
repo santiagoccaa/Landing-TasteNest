@@ -6,13 +6,13 @@ export const About = () => {
     return (
         <Flex className='my-12 md:flex-row' direction='col'>
             <Flex direction='col' className='w-full md:w-1/2'>
-                <div>
+                <div className=''>
                     <Heading fs='sm' className='uppercase' color='red'>
                         About The Food Restaurant
                     </Heading>
                     <Heading fs='xxl'>
-                        New Ground whit <br />
-                        Dishes to be <br />
+                        New Ground whit <br className='lg:block hidden' />
+                        Dishes to be <br className='lg:block hidden' />
                         Enjoyed
                     </Heading>
                 </div>

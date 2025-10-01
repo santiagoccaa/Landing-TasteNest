@@ -3,7 +3,7 @@ import { Flex, Text } from '@/components/UI'
 import { useGlobal } from '@/hook/useGlobal'
 import Image from 'next/image'
 
-const categoriesList = [
+export const categoriesList = [
     {
         id: 1,
         name: 'Dessert',

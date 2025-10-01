@@ -1,3 +1,5 @@
 export * from './Hero'
 export * from './Delivering'
 export * from './Team'
+export * from './RestauranFamily'
+export * from './FAQAbout'

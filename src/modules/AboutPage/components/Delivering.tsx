@@ -54,7 +54,7 @@ export const Delivering = () => {
 
             {/* Contenido dinámico */}
             <Flex direction='col' className='md:flex-row'>
-                <Flex className='w-full md:w-1/2 h-96' justify='start' aling='start' direction='col'>
+                <Flex className='w-full md:w-1/2 h-auto py-8 lg:py-0 lg:h-96' justify='start' aling='start' direction='col'>
                     <Heading as="h1" fw="light" color="white" fs="sm" className="flex items-center gap-1">
                         <TbPointFilled color='white' />{selectedOur?.title}
                     </Heading>

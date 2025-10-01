@@ -3,7 +3,6 @@
 import { global_menu, MenuItems } from "@/components/data";
 import { createContext, ReactNode, useEffect, useState } from "react";
 
-
 interface GlobalContextTypes {
     category: string
     handleChangeCategory: (category: string) => void

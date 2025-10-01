@@ -1,6 +1,6 @@
 import { Container } from "@/components/UI"
 import { Footer } from "../HomePage/components"
-import { Delivering, Hero, Team } from "./components"
+import { Delivering, FAQAbout, Hero, RestauranFamily, Team } from "./components"
 
 export const AboutPage = () => {
     return (
@@ -8,9 +8,13 @@ export const AboutPage = () => {
             <Container >
                 <Hero />
                 <Delivering />
-                <Team />
             </Container>
-            <div className="bg-white">
+            <RestauranFamily />
+            <Container>
+                <Team />
+                <FAQAbout />
+            </Container>
+            <div className="bg-secondary">
                 <Container>
                     <Footer />
                 </Container>
