@@ -14,7 +14,7 @@ export const HomePage = () => {
                 <DiscoverMenu />
                 <ReserveTable />
             </Container>
-            <div className='bg-[#F5F8FD] my-16 py-16'>
+            <div className='bg-secondary my-16 py-16'>
                 <Container>
                     <FeatureDishes />
                 </Container>
@@ -26,7 +26,7 @@ export const HomePage = () => {
             <Container>
                 <Social />
             </Container>
-            <div className='bg-[#F5F8FD] mt-16 pt-16 pb-4'>
+            <div className='bg-secondary mt-16 pt-16 pb-4'>
                 <Container>
                     <Footer />
                 </Container>

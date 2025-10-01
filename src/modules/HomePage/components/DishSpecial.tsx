@@ -13,7 +13,7 @@ export const DishSpecial = () => {
                 <Image width={800} height={800} alt="Dash special" src={`/categories/section/${category}.jpg`} className="w-[450px] h-[450px] rounded-full" />
             </div>
             <div className="w-full md:w-1/6 h-64 md:h-full" />
-            <div className="bg-[#F5F8FD] w-full md:w-5/6 rounded-2xl px-6 md:px-0">
+            <div className="bg-secondary w-full md:w-5/6 rounded-2xl px-6 md:px-0">
                 <Flex justify="start" aling="center" className="py-12 md:pr-12 w-full">
                     <div className="hidden md:block w-full md:w-2/5 h-full relative" />
                     <Flex direction="col" aling="start" className="w-full md:w-3/5">

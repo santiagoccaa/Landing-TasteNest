@@ -48,7 +48,7 @@ export const Navbar = () => {
                                     <li key={title}>
                                         <Link href={href} className='group'>
                                             <Text color='black' fw='medium' fs='lg'>{title}</Text>
-                                            <div className='w-full h-1 rounded-full bg-white group-hover:bg-yellow duration-300' />
+                                            <div className='w-full h-1 rounded-full bg-transparent group-hover:bg-yellow duration-300' />
                                         </Link>
                                     </li>
                                 ))
@@ -81,7 +81,7 @@ export const Navbar = () => {
                             ))
                         }
                     </Flex>
-                    <div className='h-2 bg-[#FFD40D] w-full' />
+                    <div className='h-2 bg-yellow w-full' />
                 </ul>
                 <Container>
                     <nav className='flex justify-between items-center relative'>

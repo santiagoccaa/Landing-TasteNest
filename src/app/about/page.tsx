@@ -1,11 +1,14 @@
-import React from 'react'
+import { Container } from "@/components/UI"
+import { AboutPage } from "@/modules/AboutPage"
 
-const AboutPage = () => {
+const PageAbout = () => {
   return (
-    <div>
-      AboutPage
+    <div className="bg-black">
+      <Container>
+        <AboutPage />
+      </Container>
     </div>
   )
 }
 
-export default AboutPage
+export default PageAbout

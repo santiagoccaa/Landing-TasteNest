@@ -17,7 +17,7 @@ const features = [
 
 export const Ordering = () => {
     return (
-        <div className='bg-[#F5F8FD] relative pt-16 my-16 h-fit'>
+        <div className='bg-secondary relative pt-16 my-16 h-fit'>
             <div className='absolute h-72 w-full md:w-1/2 bg-red bottom-8 md:top-1/2 md:-translate-y-1/2 right-0 md:rounded-l-full' />
             <Container>
                 <Flex justify='start' aling='start' direction='col' className='md:flex-row'>
