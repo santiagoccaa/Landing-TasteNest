@@ -2,12 +2,11 @@
 
 import { Button, Container, Flex, Text } from '@/components/UI'
 import { RiMenu4Line } from "react-icons/ri";
-
 import Image from "next/image"
 import { MdOutlineShoppingBag } from 'react-icons/md';
 import { useState } from 'react';
 import Link from 'next/link';
-
+import { usePathname } from 'next/navigation';
 
 interface LinksPage {
     title: string,
@@ -24,18 +23,21 @@ const linksPage: LinksPage[] = [
     },
     {
         title: 'Menu',
-        href: '/menu/dessert'
+        href: '/menu'
     }
 ]
 
 export const Navbar = () => {
 
+    const pathName = usePathname()
+
     const [navActive, setNavActive] = useState(false)
+
+    if (pathName === "/menu") return;
 
     return (
         <>
             {/* Desktop */}
-
             <div className="hidden md:block py-2">
                 <Container>
                     <nav className='flex h-12 justify-between items-center'>
@@ -67,14 +69,13 @@ export const Navbar = () => {
             </div>
 
             {/* Mobile */}
-
             <div className="block md:hidden py-2 h-16 relative">
                 <ul className={` ${navActive ? 'h-screen' : 'h-0'} absolute top-16 bg-white w-full overflow-hidden transition-all duration-500 flex items-end z-40`}>
                     <Flex direction='col' gap='8' className='absolute top-12 h-96 w-full'>
                         {
                             linksPage.map(({ title, href }) => (
                                 <li key={title}>
-                                    <Link href={href} onClick={() =>setNavActive(!navActive)}>
+                                    <Link href={href} onClick={() => setNavActive(!navActive)}>
                                         <Text color='black' fw='bold' fs='lg' className='mt-12'>{title}</Text>
                                     </Link>
                                 </li>

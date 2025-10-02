@@ -33,7 +33,7 @@ const aboutItems: AboutItem[] = [
 export const AboutCard = () => {
     return (
         <Flex gap="10" direction="col" className="md:flex-row">
-            {aboutItems.map(({ title, img, mt, category }, index) => (
+            {aboutItems.map(({ title, img, mt }, index) => (
                 <div
                     key={index}
                     className={`w-60 h-80 rounded-2xl p-2 pb-6 bg-black relative overflow-hidden group ${mt}`}
@@ -45,7 +45,7 @@ export const AboutCard = () => {
                         alt={`${title} option`}
                         className="w-full h-full absolute top-0 left-0 group-hover:scale-105 duration-500"
                     />
-                    <Link href={`/menu/${category}`} className="w-full h-full border-2 border-yellow rounded-2xl flex items-end relative">
+                    <Link href={`/menu`} className="w-full h-full border-2 border-yellow rounded-2xl flex items-end relative">
                         <Flex className="w-full h-10 bg-yellow rounded-full absolute -bottom-5">
                             <Heading fs="lg">{title}</Heading>
                         </Flex>

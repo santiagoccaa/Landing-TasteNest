@@ -1,26 +1,48 @@
 "use client"
 
 import { Button, Container, Flex, Heading, Text } from "@/components/UI"
+import { MdOutlineRestaurantMenu } from "react-icons/md";
 import { useGlobal } from "@/hook/useGlobal"
 import { categoriesList } from "@/modules/HomePage/components"
 import Image from "next/image"
 import { useParams } from "next/navigation"
+import { useState } from "react"
 import { TbPlus } from "react-icons/tb"
+import Link from "next/link";
 
 const MenuPage = () => {
 
   const params = useParams()
   const { menuSelected, handleChangeCategory } = useGlobal()
+  const [viewMenu, setViewMenu] = useState(false)
 
   return (
-    <div className="bg-secondary py-16">
+    <div className="bg-secondary">
       <Container>
-        <Flex className="w-full bg-blue-400 lg:flex-row lg:items-start" aling="center" direction="col">
-          <div className="h-full w-72 hidden lg:block">
+        <Flex
+          className="w-full pt-24 lg:pt-4 h-screen overflow-hidden relative lg:flex-row lg:items-start lg:justify-start" justify="center"
+          aling="center"
+          direction="col"
+        >
+          <button
+            onClick={() => setViewMenu(!viewMenu)}
+            className="absolute block lg:hidden top-2 right-2 bg-red p-4 rounded-full text-2xl text-white z-20"
+          >
+            <MdOutlineRestaurantMenu />
+          </button>
+          {/* Categorias */}
+          <div
+            className={`absolute top-0 ${viewMenu ? 'left-0' : '-left-[100%] lg:left-0'} bg-white transition-all duration-300 lg:relative px-4 z-40 w-4/6 lg:w-auto h-full`}
+          >
             <Heading className="capitalize" fs="xxl">
               {params.category}
             </Heading>
-            <Flex direction="col" gap="10" className="mt-12">
+            <Flex direction="col" gap="10">
+              <Link href={"/"} className="p-4 rounded-full text-sm font-bold">
+                <div>
+                  <Image src="/general/logo.png" width={400} height={400} alt="logo page" className="w-32 h-14" />
+                </div>
+              </Link>
               {
                 categoriesList.map((c) => (
                   <Button
@@ -45,11 +67,12 @@ const MenuPage = () => {
               }
             </Flex>
           </div>
-          <Flex justify="start" aling="start" className=" md:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {/* Products */}
+          <Flex justify="start" aling="start" className="overflow-y-auto h-[90vh]">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 pb-4 px-4">
               {menuSelected.map(({ title, description, price, menu_category }, idx) => (
-                <article key={idx} className="w-80 h-96 bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-200">
-                  <div className="relative h-56 w-full">
+                <article key={idx} className="w-72 h-96 bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-200">
+                  <div className="relative h-56 w-full bg-pink-300">
                     <Image
                       src={`/categories/${menu_category}.svg`}
                       alt={title}
