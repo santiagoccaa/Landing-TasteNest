@@ -7,6 +7,7 @@ import { MdOutlineShoppingBag } from 'react-icons/md';
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useGlobal } from '@/hook/useGlobal';
 
 interface LinksPage {
     title: string,
@@ -30,6 +31,8 @@ const linksPage: LinksPage[] = [
 export const Navbar = () => {
     const pathName = usePathname()
     const [navActive, setNavActive] = useState(false)
+
+    const {handleModalTable} = useGlobal()
 
     return (
         <>
@@ -58,8 +61,8 @@ export const Navbar = () => {
                             <button className='hover:bg-yellow duration-300 p-2 rounded-full cursor-pointer'>
                                 <MdOutlineShoppingBag size={20} />
                             </button>
-                            <Button color='red'>
-                                <Text color='white' fw='bold'>Reservar</Text>
+                            <Button color='red' onClick={() => handleModalTable()}>
+                                <Text color='white' fw='bold'>Reserve</Text>
                             </Button>
                         </Flex>
                     </nav>
@@ -89,8 +92,8 @@ export const Navbar = () => {
                         </div>
                         <div className='flex gap-8 items-center justify-end'>
                             <MdOutlineShoppingBag size={20} />
-                            <Button color='yellow'>
-                                <Text color='white' fw='bold'>Reservar</Text>
+                            <Button color='yellow' onClick={() => handleModalTable()}>
+                                <Text color='white' fw='bold'>Reserve</Text>
                             </Button>
                             <button onClick={() => setNavActive(!navActive)}>
                                 <RiMenu4Line size={20} />

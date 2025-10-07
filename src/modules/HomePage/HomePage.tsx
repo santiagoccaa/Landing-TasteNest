@@ -1,10 +1,12 @@
 import { Container } from "@/components/UI"
 import { About, Categories, DiscoverMenu, DishSpecial, FeatureDishes, Footer, Hero, Ordering, ReserveTable, Social, Testimonials } from "./components"
 import { AboutCard } from "./components/AboutCard"
+import ModalTable from "@/components/Modal/ModalTable"
 
 export const HomePage = () => {
     return (
         <>
+        <ModalTable />
             <Hero />
             <Container>
                 <About />
