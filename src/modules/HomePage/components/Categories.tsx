@@ -39,7 +39,7 @@ export const Categories = () => {
                                 direction='col'
                                 className={`w-28 h-32 bg-red border-2 border-red rounded-lg ${category === item.icon ? 'rounded-br-[50%] rounded-bl-[50%] shadow-lg scale-105' : 'scale-95'} transition-all duration-500`}
                             >
-                                <Image src={`/categories/${item.icon}.svg`} width={400} height={400} alt='dessert category' className='w-10 h-10' />
+                                <Image src={`/categories/${item.icon}.svg`} width={400} height={400} alt='dessert category' className='w-10 h-10 bg-red' />
                                 <Text className='text-white' fs='lg' fw='bold'>
                                     {item.name}
                                 </Text>

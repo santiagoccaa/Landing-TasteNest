@@ -28,12 +28,8 @@ const linksPage: LinksPage[] = [
 ]
 
 export const Navbar = () => {
-
     const pathName = usePathname()
-
     const [navActive, setNavActive] = useState(false)
-
-    if (pathName === "/menu") return;
 
     return (
         <>
@@ -42,7 +38,9 @@ export const Navbar = () => {
                 <Container>
                     <nav className='flex h-12 justify-between items-center'>
                         <div className='w-2/6'>
-                            <Image src="/general/logo.png" width={400} height={400} alt="logo page" className="w-32 h-14" />
+                            <Link href={"/"}>
+                                <Image src="/general/logo.png" width={400} height={400} alt="logo page" className="w-32 h-14" />
+                            </Link>
                         </div>
                         <ul className="flex gap-12">
                             {
@@ -50,7 +48,7 @@ export const Navbar = () => {
                                     <li key={title}>
                                         <Link href={href} className='group'>
                                             <Text color='black' fw='medium' fs='lg'>{title}</Text>
-                                            <div className='w-full h-1 rounded-full bg-transparent group-hover:bg-yellow duration-300' />
+                                            <div className={`w-full h-1 rounded-full  group-hover:bg-yellow duration-300 ${pathName === href ? 'bg-yellow' : 'bg-transparent'}`} />
                                         </Link>
                                     </li>
                                 ))
