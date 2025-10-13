@@ -8,6 +8,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useGlobal } from '@/hook/useGlobal';
+import { PiUserCircleGearLight } from 'react-icons/pi';
 
 interface LinksPage {
     title: string,
@@ -32,7 +33,7 @@ export const Navbar = () => {
     const pathName = usePathname()
     const [navActive, setNavActive] = useState(false)
 
-    const {handleModalTable} = useGlobal()
+    const { handleModalRender, handleModal } = useGlobal()
 
     return (
         <>
@@ -58,12 +59,17 @@ export const Navbar = () => {
                             }
                         </ul>
                         <Flex gap='8' justify='end' className='w-2/6'>
-                            <button className='hover:bg-yellow duration-300 p-2 rounded-full cursor-pointer'>
-                                <MdOutlineShoppingBag size={20} />
+                            <button className='hover:bg-yellow duration-300 p-2 rounded-full cursor-pointer text-xl'>
+                                <MdOutlineShoppingBag />
                             </button>
-                            <Button color='red' onClick={() => handleModalTable()}>
+                            <Button color='red' onClick={() => { handleModalRender('table'); handleModal() }}>
                                 <Text color='white' fw='bold'>Reserve</Text>
                             </Button>
+                            <button 
+                            onClick={() => { handleModalRender('auth'); handleModal() }}
+                            className='hover:bg-sky-500 duration-300 p-1 rounded-full cursor-pointer text-2xl'>
+                                <PiUserCircleGearLight />
+                            </button>
                         </Flex>
                     </nav>
                 </Container>
@@ -92,7 +98,7 @@ export const Navbar = () => {
                         </div>
                         <div className='flex gap-8 items-center justify-end'>
                             <MdOutlineShoppingBag size={20} />
-                            <Button color='yellow' onClick={() => handleModalTable()}>
+                            <Button color='yellow' onClick={() => { handleModalRender('table'); handleModal() }}>
                                 <Text color='white' fw='bold'>Reserve</Text>
                             </Button>
                             <button onClick={() => setNavActive(!navActive)}>

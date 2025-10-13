@@ -1,6 +1,7 @@
 "use client"
 
 import { global_menu, MenuItems } from "@/components/data";
+import { RenderModal } from "@/components/Modal";
 import { createContext, ReactNode, useEffect, useState } from "react";
 
 interface GlobalContextTypes {
@@ -8,23 +9,23 @@ interface GlobalContextTypes {
     handleChangeCategory: (category: string) => void
     menuSelected: MenuItems[]
     openModal: boolean
-    openModalTable: boolean
     handleModal: () => void
     productMenu: MenuItems | null
     handleAddProductModal: (product: MenuItems) => void
-    handleModalTable: () => void
+    contentModalRender: RenderModal
+    handleModalRender: (modal: RenderModal) => void
 }
 
 const GlobalContext = createContext<GlobalContextTypes>({
     category: "",
-    openModalTable: false,
     handleChangeCategory: () => { },
     menuSelected: [],
     openModal: false,
     handleModal: () => { },
     productMenu: null,
     handleAddProductModal: () => { },
-    handleModalTable: () => { }
+    contentModalRender: 'product',
+    handleModalRender: () => { }
 });
 
 interface GlobalProviderProps {
@@ -36,8 +37,8 @@ const GlobalProvider = ({ children }: GlobalProviderProps) => {
     const [category, setCategory] = useState("dessert")
     const [menuSelected, setMenuSelected] = useState<MenuItems[]>([])
     const [openModal, setOpenModal] = useState(false)
-    const [openModalTable, setOpenModalTable] = useState(false)
     const [productMenu, setProductMenu] = useState<MenuItems | null>(null)
+    const [contentModalRender, setContentModalRender] = useState<RenderModal>('product')
 
     const handleChangeCategory = (category: string) => {
         setCategory(category)
@@ -60,8 +61,8 @@ const GlobalProvider = ({ children }: GlobalProviderProps) => {
         setProductMenu(product)
     }
 
-    const handleModalTable = () => {
-        setOpenModalTable(!openModalTable)
+    const handleModalRender = (modal: RenderModal) => {
+        setContentModalRender(modal)
     }
 
     return (
@@ -74,8 +75,8 @@ const GlobalProvider = ({ children }: GlobalProviderProps) => {
                 handleModal,
                 productMenu,
                 handleAddProductModal,
-                openModalTable,
-                handleModalTable
+                contentModalRender,
+                handleModalRender
             }}
         >
             {children}

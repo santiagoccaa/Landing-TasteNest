@@ -4,8 +4,8 @@ import { useGlobal } from "@/hook/useGlobal"
 import Image from "next/image"
 import { TbListDetails } from "react-icons/tb";
 
-export const Products = (product: MenuItems) => {
-    const { handleModal, handleAddProductModal } = useGlobal()
+export const ProductCard = (product: MenuItems) => {
+    const { handleModal, handleAddProductModal, handleModalRender } = useGlobal()
     const { title, description, price, } = product
     return (
         <div
@@ -25,7 +25,7 @@ export const Products = (product: MenuItems) => {
             <div className="text-center bg-white rounded-xl rounded-b-4xl h-[70%] p-1 flex flex-col justify-end">
                 <div className="h-1/2 flex justify-between flex-col px-1 relative">
                     <button 
-                    onClick={() => { handleAddProductModal(product); handleModal() }} 
+                    onClick={() => { handleAddProductModal(product); handleModal(); handleModalRender('product') }} 
                     className="p-1 rounded-full shadow-lg absolute -top-8 left-0 text-slate-600 text-lg">
                         <TbListDetails />
                     </button>

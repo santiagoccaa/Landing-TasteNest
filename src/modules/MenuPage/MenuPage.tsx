@@ -2,8 +2,7 @@
 
 import { Container, Flex, Heading } from "@/components/UI"
 import { useGlobal } from "@/hook/useGlobal"
-import { Categories, Products } from "./components";
-import ModalProduct from "@/components/Modal/Modal";
+import { Categories, ProductCard } from "./components";
 
 export const MenuPage = () => {
 
@@ -11,7 +10,7 @@ export const MenuPage = () => {
 
     return (
         <div className="bg-secondary">
-            <ModalProduct />
+            
             <Container>
                 <Flex
                     className="w-full pt-4 min-h-screen overflow-hidden relative "
@@ -28,7 +27,7 @@ export const MenuPage = () => {
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 gap-y-10 pb-4 px-4">
                             {menuSelected.map((product, idx) => (
-                                <Products key={idx} {...product} />
+                                <ProductCard key={idx} {...product} />
                             ))}
                         </div>
                         <div className="w-full py-2 my-6 border-slate-400 border-b-2 border-dashed">
@@ -38,7 +37,7 @@ export const MenuPage = () => {
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 gap-y-10 pb-4 px-4">
                             {menuSelected.map((product, idx) => (
-                                <Products key={idx} {...product} />
+                                <ProductCard key={idx} {...product} />
                             ))}
                         </div>
                         <div className="w-full py-2 my-6 border-slate-400 border-b-2 border-dashed">
@@ -48,7 +47,7 @@ export const MenuPage = () => {
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 gap-y-10 pb-4 px-4">
                             {menuSelected.map((product, idx) => (
-                                <Products key={idx} {...product} />
+                                <ProductCard key={idx} {...product} />
                             ))}
                         </div>
                     </Flex>
