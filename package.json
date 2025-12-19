@@ -10,8 +10,6 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^6.36.4",
-    "@prisma/client": "^6.17.0",
-    "@prisma/extension-accelerate": "^2.0.2",
     "axios": "^1.12.2",
     "formik": "^2.4.9",
     "next": "15.5.4",
@@ -28,7 +26,6 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.5.4",
-    "prisma": "^6.17.0",
     "tailwindcss": "^4",
     "tsx": "^4.20.6",
     "typescript": "^5"
