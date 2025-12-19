@@ -14,6 +14,8 @@ interface GlobalContextTypes {
     handleAddProductModal: (product: MenuItems) => void
     contentModalRender: RenderModal
     handleModalRender: (modal: RenderModal) => void
+    openOrder: boolean
+    handleOpenOrder: () => void
 }
 
 const GlobalContext = createContext<GlobalContextTypes>({
@@ -25,7 +27,9 @@ const GlobalContext = createContext<GlobalContextTypes>({
     productMenu: null,
     handleAddProductModal: () => { },
     contentModalRender: 'product',
-    handleModalRender: () => { }
+    handleModalRender: () => { },
+    openOrder: false,
+    handleOpenOrder: () => { }
 });
 
 interface GlobalProviderProps {
@@ -39,6 +43,7 @@ const GlobalProvider = ({ children }: GlobalProviderProps) => {
     const [openModal, setOpenModal] = useState(false)
     const [productMenu, setProductMenu] = useState<MenuItems | null>(null)
     const [contentModalRender, setContentModalRender] = useState<RenderModal>('product')
+    const [openOrder, setOpenOrder] = useState(false)
 
     const handleChangeCategory = (category: string) => {
         setCategory(category)
@@ -65,6 +70,10 @@ const GlobalProvider = ({ children }: GlobalProviderProps) => {
         setContentModalRender(modal)
     }
 
+    const handleOpenOrder = () => {
+        setOpenOrder(!openOrder)
+    }
+
     return (
         <GlobalContext.Provider
             value={{
@@ -76,7 +85,9 @@ const GlobalProvider = ({ children }: GlobalProviderProps) => {
                 productMenu,
                 handleAddProductModal,
                 contentModalRender,
-                handleModalRender
+                handleModalRender,
+                handleOpenOrder,
+                openOrder
             }}
         >
             {children}

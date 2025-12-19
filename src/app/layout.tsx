@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { GlobalProvider } from "@/context/GlobalContext";
 import { Modal } from "@/components/Modal";
+import { Order } from "@/components/Order";
 
 const fontPage = Fredoka({
   variable: "--font-geist-sans",
@@ -27,8 +28,12 @@ export default function RootLayout({
       >
         <GlobalProvider>
           <Navbar />
+          <div className="overflow-hidden w-full relative">
+            <Order />
+          </div>
           {children}
           <Modal />
+
         </GlobalProvider>
       </body>
     </html>

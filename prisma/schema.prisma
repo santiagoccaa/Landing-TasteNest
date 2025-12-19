@@ -12,7 +12,7 @@ generator client {
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
-}
+} 
 
 enum OfferTargetType {
   PRODUCT
@@ -49,7 +49,6 @@ model Product {
   description     String           @db.Text
   price           Float // precio "base" del producto
   sku             String?          @db.Text
-  stock           Int? // cantidad en inventario (opcional)
   imageUrl        String?          @db.Text
   isPublished     Boolean          @default(true)
   inOffer         Boolean          @default(false) // indicador rápido para UI

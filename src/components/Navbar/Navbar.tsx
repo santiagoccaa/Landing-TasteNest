@@ -33,12 +33,14 @@ export const Navbar = () => {
     const pathName = usePathname()
     const [navActive, setNavActive] = useState(false)
 
-    const { handleModalRender, handleModal } = useGlobal()
+    const { handleModalRender, handleModal, handleOpenOrder } = useGlobal()
+
+    if (pathName.startsWith('/admin')) return null
 
     return (
         <>
             {/* Desktop */}
-            <div className="hidden md:block py-2">
+            <div className="hidden md:block py-2 shadow">
                 <Container>
                     <nav className='flex h-12 justify-between items-center'>
                         <div className='w-2/6'>
@@ -59,15 +61,15 @@ export const Navbar = () => {
                             }
                         </ul>
                         <Flex gap='8' justify='end' className='w-2/6'>
-                            <button className='hover:bg-yellow duration-300 p-2 rounded-full cursor-pointer text-xl'>
+                            <button onClick={handleOpenOrder} className='hover:bg-yellow duration-300 p-2 rounded-full cursor-pointer text-xl'>
                                 <MdOutlineShoppingBag />
                             </button>
                             <Button color='red' onClick={() => { handleModalRender('table'); handleModal() }}>
                                 <Text color='white' fw='bold'>Reserve</Text>
                             </Button>
-                            <button 
-                            onClick={() => { handleModalRender('auth'); handleModal() }}
-                            className='hover:bg-sky-500 duration-300 p-1 rounded-full cursor-pointer text-2xl'>
+                            <button
+                                onClick={() => { handleModalRender('auth'); handleModal() }}
+                                className='hover:bg-sky-500 duration-300 p-1 rounded-full cursor-pointer text-2xl'>
                                 <PiUserCircleGearLight />
                             </button>
                         </Flex>
