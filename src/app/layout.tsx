@@ -5,6 +5,7 @@ import { Navbar } from "@/components/Navbar";
 import { GlobalProvider } from "@/context/GlobalContext";
 import { Modal } from "@/components/Modal";
 import { Order } from "@/components/Order";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const fontPage = Fredoka({
   variable: "--font-geist-sans",
@@ -22,20 +23,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
-      <body
-        className={`${fontPage.className}`}
-      >
-        <GlobalProvider>
-          <Navbar />
-          <div className="overflow-hidden w-full relative">
-            <Order />
-          </div>
-          {children}
-          <Modal />
+    <ClerkProvider>
+      <html lang="es">
+        <body
+          className={`${fontPage.className}`}
+        >
+          <GlobalProvider>
+            <Navbar />
+            <div className="overflow-hidden w-full relative">
+              <Order />
+            </div>
+            {children}
+            <Modal />
 
-        </GlobalProvider>
-      </body>
-    </html>
+          </GlobalProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

@@ -1,4 +1,5 @@
-import { Button, Heading, Text } from "@/components/UI";
+import { Heading } from "@/components/UI";
+import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
 
 export function ModalLogin() {
     return (
@@ -6,20 +7,17 @@ export function ModalLogin() {
             <Heading>
                 Sign In
             </Heading>
-            <form>
-                <div className='flex flex-col my-4 w-full'>
-                    <label htmlFor="email">Email</label>
-                    <input type='email' name='email' id='email' placeholder='email@gmail.com' className='p-2 bg-secondary rounded-lg outline-red border border-slate-300' />
-                </div>
-                <div className='flex flex-col my-4 w-full'>
-                    <label htmlFor="password">Passoword</label>
-                    <input type='password' name='password' id='password' className='p-2 bg-secondary rounded-lg outline-red border border-slate-300' />
-                </div>
-
-                <Button color='red' className='w-full mt-8'>
-                    <Text color='white' fw='bold'>Sign In</Text>
-                </Button>
-            </form>
+            <SignedOut>
+                <SignInButton />
+                <SignUpButton>
+                    <button className="bg-red text-ceramic-white rounded-full font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 cursor-pointer">
+                        Sign Up
+                    </button>
+                </SignUpButton>
+            </SignedOut>
+            <SignedIn>
+                <UserButton />
+            </SignedIn>
         </div>
     )
 }

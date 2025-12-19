@@ -8,7 +8,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useGlobal } from '@/hook/useGlobal';
-import { PiUserCircleGearLight } from 'react-icons/pi';
+import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/nextjs';
 
 interface LinksPage {
     title: string,
@@ -36,6 +36,7 @@ export const Navbar = () => {
     const { handleModalRender, handleModal, handleOpenOrder } = useGlobal()
 
     if (pathName.startsWith('/admin')) return null
+    if (pathName.startsWith('/auth')) return null
 
     return (
         <>
@@ -67,11 +68,17 @@ export const Navbar = () => {
                             <Button color='red' onClick={() => { handleModalRender('table'); handleModal() }}>
                                 <Text color='white' fw='bold'>Reserve</Text>
                             </Button>
-                            <button
+                            {/* <button
                                 onClick={() => { handleModalRender('auth'); handleModal() }}
                                 className='hover:bg-sky-500 duration-300 p-1 rounded-full cursor-pointer text-2xl'>
                                 <PiUserCircleGearLight />
-                            </button>
+                            </button> */}
+                            <SignedOut>
+                                <SignInButton />
+                            </SignedOut>
+                            <SignedIn>
+                                <UserButton />
+                            </SignedIn>
                         </Flex>
                     </nav>
                 </Container>
